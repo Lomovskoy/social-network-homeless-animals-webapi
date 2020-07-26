@@ -1,0 +1,29 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="4" author="lomovskoy_ky">
+        <createTable tableName="foto">
+            <column name="id" type="UUID" remarks="Идентификатор фотографии">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="photo_id_PK" unique="true"/>
+            </column>
+            <column name="animal" type="UUID" remarks="Животное фотографии">
+                <constraints nullable="false" foreignKeyName="animal_to_photo_FK" references="animal(id)" unique="true"/>
+            </column>
+            <column name="description" type="varchar(500)" remarks="Описание фотографии">
+                <constraints nullable="true"/>
+            </column>
+            <column name="name" type="varchar(250)" remarks="Имя фотографии">
+                <constraints nullable="true"/>
+            </column>
+            <column name="ext" type="varchar(10)" remarks="Формат фотографии">
+                <constraints nullable="false" />
+            </column>
+            <column name="file_path" type="varchar(10)" remarks="Путь к фотографии">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_date" type="timestamp" remarks="Дата создания фотографии">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -1,7 +1,7 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
-    <changeSet id="2" author="lomovskoy_ky">
+    <changeSet id="3" author="lomovskoy_ky">
         <createTable tableName="advertisement">
             <column name="id" type="UUID" remarks="Идентификатор объявления">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="advertisement_id_PK" unique="true"/>
