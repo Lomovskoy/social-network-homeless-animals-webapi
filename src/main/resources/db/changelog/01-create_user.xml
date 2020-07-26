@@ -1,0 +1,44 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="1" author="lomovskoy_ky">
+        <createTable tableName="user">
+            <column name="id" type="UUID" remarks="Идентификатор пользователя">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="user_id_PK" unique="true"/>
+            </column>
+            <column name="name" type="varchar(50)" remarks="Имя пользователя">
+                <constraints nullable="false"/>
+            </column>
+            <column name="surname" type="varchar(50)" remarks="Фамилия пользователя">
+                <constraints nullable="true"/>
+            </column>
+            <column name="patronymic" type="varchar(50)" remarks="Отчество пользователя">
+                <constraints nullable="true"/>
+            </column>
+            <column name="phone" type="varchar(15)" remarks="Телефон пользователя">
+                <constraints nullable="true"/>
+            </column>
+            <column name="email" type="varchar(50)" remarks="Электронная почта пользователя">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="address" type="varchar(250)" remarks="Адрес пользователя">
+                <constraints nullable="true"/>
+            </column>
+            <column name="sex" type="varchar(1)" remarks="Пол пользователя">
+                <constraints nullable="true"/>
+            </column>
+            <column name="image" type="varchar(250)" remarks="Аватар пользователя">
+                <constraints nullable="false"/>
+            </column>
+            <column name="work_email" type="varchar(50)" remarks="Рабочая электронная почта пользователя">
+                <constraints nullable="true"/>
+            </column>
+            <column name="password" type="varchar(50)" remarks="Пароль пользователя">
+                <constraints nullable="false"/>
+            </column>
+            <column name="salt" type="varchar(20)" remarks="Соль пользователя">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
