@@ -21,6 +21,9 @@
             <column name="description" type="varchar(500)" remarks="Описание животного">
                 <constraints nullable="true"/>
             </column>
+            <column name="user" type="UUID" remarks="Хозяин животного">
+                <constraints nullable="false" foreignKeyName="user_to_animal_FK" references="user(id)"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>
