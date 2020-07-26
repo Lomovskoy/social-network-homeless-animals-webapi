@@ -4,6 +4,7 @@
     <include file="changelog/01-create_user.xml" relativeToChangelogFile="true"/>
     <include file="changelog/02-create_animal.xml" relativeToChangelogFile="true"/>
     <include file="changelog/03-create_advertisement.xml" relativeToChangelogFile="true"/>
-    <include file="changelog/04_create_photo.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/04-create_photo.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/05-create_avatar.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

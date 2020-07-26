@@ -2,7 +2,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
     <changeSet id="4" author="lomovskoy_ky">
-        <createTable tableName="foto">
+        <createTable tableName="photo">
             <column name="id" type="UUID" remarks="Идентификатор фотографии">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="photo_id_PK" unique="true"/>
             </column>

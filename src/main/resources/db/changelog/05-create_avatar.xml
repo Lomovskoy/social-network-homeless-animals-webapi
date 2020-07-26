@@ -1,0 +1,26 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="5" author="lomovskoy_ky">
+        <createTable tableName="avatar">
+            <column name="id" type="UUID" remarks="Идентификатор аватара">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="avatar_id_PK" unique="true"/>
+            </column>
+            <column name="user" type="UUID" remarks="Пользователь аватара">
+                <constraints nullable="false" foreignKeyName="user_to_avatar_FK" references="user(id)" unique="true"/>
+            </column>
+            <column name="name" type="varchar(250)" remarks="Имя аватара">
+                <constraints nullable="true"/>
+            </column>
+            <column name="ext" type="varchar(10)" remarks="Формат аватара">
+                <constraints nullable="false" />
+            </column>
+            <column name="file_path" type="varchar(10)" remarks="Путь к аватара">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_date" type="timestamp" remarks="Дата создания аватара">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
