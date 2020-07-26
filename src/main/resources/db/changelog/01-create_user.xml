@@ -27,8 +27,14 @@
             <column name="sex" type="varchar(1)" remarks="Пол пользователя">
                 <constraints nullable="true"/>
             </column>
-            <column name="image" type="varchar(250)" remarks="Аватар пользователя">
+            <column name="date_of_birth" type="timestamp" remarks="Дата рождения пользователя">
+                <constraints nullable="true"/>
+            </column>
+            <column name="date_registration" type="timestamp" remarks="Дата регистрации пользователя">
                 <constraints nullable="false"/>
+            </column>
+            <column name="image" type="varchar(250)" remarks="Аватар пользователя">
+                <constraints nullable="true"/>
             </column>
             <column name="work_email" type="varchar(50)" remarks="Рабочая электронная почта пользователя">
                 <constraints nullable="true"/>

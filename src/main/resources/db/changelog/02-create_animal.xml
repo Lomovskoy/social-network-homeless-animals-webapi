@@ -1,0 +1,26 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="2" author="lomovskoy_ky">
+        <createTable tableName="animal">
+            <column name="id" type="UUID" remarks="Идентификатор животного">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="animal_id_PK" unique="true"/>
+            </column>
+            <column name="species" type="varchar(50)" remarks="Вид животного">
+                <constraints nullable="false"/>
+            </column>
+            <column name="breed" type="varchar(50)" remarks="Порода животного">
+                <constraints nullable="true"/>
+            </column>
+            <column name="nickname" type="varchar(50)" remarks="Кличка животного">
+                <constraints nullable="true"/>
+            </column>
+            <column name="date_of_birth" type="timestamp" remarks="Дата рождения животного">
+                <constraints nullable="true"/>
+            </column>
+            <column name="description" type="varchar(500)" remarks="Описание животного">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
