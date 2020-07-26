@@ -4,10 +4,10 @@
     <changeSet id="7" author="lomovskoy_ky">
         <createTable tableName="favorites">
             <column name="user" type="UUID" remarks="Пользователь">
-                <constraints nullable="false" foreignKeyName="user_to_advertisement_favorites_FK" references="user(id)" unique="true"/>
+                <constraints nullable="false" foreignKeyName="user_to_advertisement_favorites_FK" references="user(id)"/>
             </column>
             <column name="advertisement" type="UUID" remarks="Объявление">
-                <constraints nullable="false" foreignKeyName="advertisement_to_user_favorites_FK" references="advertisement(id)" unique="true"/>
+                <constraints nullable="false" foreignKeyName="advertisement_to_user_favorites_FK" references="advertisement(id)"/>
             </column>
         </createTable>
     </changeSet>

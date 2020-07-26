@@ -8,5 +8,6 @@
     <include file="changelog/05-create_avatar.xml" relativeToChangelogFile="true"/>
     <include file="changelog/06-create_comment.xml" relativeToChangelogFile="true"/>
     <include file="changelog/07-create_favorites.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/08-create_private_message.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

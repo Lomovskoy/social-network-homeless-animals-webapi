@@ -7,7 +7,7 @@
                 <constraints nullable="false" primaryKey="true" primaryKeyName="photo_id_PK" unique="true"/>
             </column>
             <column name="animal" type="UUID" remarks="Животное фотографии">
-                <constraints nullable="false" foreignKeyName="animal_to_photo_FK" references="animal(id)" unique="true"/>
+                <constraints nullable="false" foreignKeyName="animal_to_photo_FK" references="animal(id)"/>
             </column>
             <column name="description" type="varchar(500)" remarks="Описание фотографии">
                 <constraints nullable="true"/>

@@ -1,0 +1,23 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="8" author="lomovskoy_ky">
+        <createTable tableName="private_message">
+            <column name="id" type="UUID" remarks="Идентификатор сообщения">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="private_message_id_PK" unique="true"/>
+            </column>
+            <column name="text" type="varchar(5000)" remarks="Текст сообщения">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="timestamp" remarks="Дата сообщения">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sender" type="UUID" remarks="Отправитель сообщения">
+                <constraints nullable="false" foreignKeyName="sender_message_id_PK" references="user(id)"/>
+            </column>
+            <column name="recipient" type="UUID" remarks="Получатель сообщения">
+                <constraints nullable="false" foreignKeyName="recipient_message_id_PK" references="user(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
