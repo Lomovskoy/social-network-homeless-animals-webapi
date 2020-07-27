@@ -19,6 +19,7 @@ data class Comment (
         @ManyToOne
         val advertisement: Advertisement,
 
+
         val description: String,
 
         val creteDate: LocalDateTime

@@ -33,9 +33,6 @@
             <column name="date_registration" type="timestamp" remarks="Дата регистрации пользователя">
                 <constraints nullable="false"/>
             </column>
-            <column name="image" type="varchar(250)" remarks="Аватар пользователя">
-                <constraints nullable="false"/>
-            </column>
             <column name="work_email" type="varchar(50)" remarks="Рабочая электронная почта пользователя">
                 <constraints nullable="true"/>
             </column>

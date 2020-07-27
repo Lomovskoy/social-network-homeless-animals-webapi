@@ -15,10 +15,10 @@
             <column name="name" type="varchar(250)" remarks="Имя фотографии">
                 <constraints nullable="true"/>
             </column>
-            <column name="ext" type="varchar(10)" remarks="Формат фотографии">
+            <column name="ext" type="varchar(3)" remarks="Формат фотографии">
                 <constraints nullable="false" />
             </column>
-            <column name="file_path" type="varchar(10)" remarks="Путь к фотографии">
+            <column name="file_path" type="varchar(36)" remarks="Путь к фотографии">
                 <constraints nullable="false"/>
             </column>
             <column name="create_date" type="timestamp" remarks="Дата создания фотографии">

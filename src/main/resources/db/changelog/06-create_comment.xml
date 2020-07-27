@@ -12,7 +12,7 @@
             <column name="advertisement" type="UUID" remarks="Объявление комментария">
                 <constraints nullable="false" foreignKeyName="advertisement_to_comment_FK" references="advertisement(id)"/>
             </column>
-            <column name="description" type="varchar(500)" remarks="Описание комментария">
+            <column name="description" type="varchar(5000)" remarks="Описание комментария">
                 <constraints nullable="true"/>
             </column>
             <column name="create_date" type="timestamp" remarks="Дата создания комментария">

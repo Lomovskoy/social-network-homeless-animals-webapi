@@ -9,7 +9,7 @@
             <column name="heading" type="varchar(50)" remarks="Заголовок объявления">
                 <constraints nullable="false"/>
             </column>
-            <column name="description" type="varchar(500)" remarks="Описание объявления">
+            <column name="description" type="varchar(1000)" remarks="Описание объявления">
                 <constraints nullable="false"/>
             </column>
             <column name="address" type="varchar(250)" remarks="Адрес объявления">

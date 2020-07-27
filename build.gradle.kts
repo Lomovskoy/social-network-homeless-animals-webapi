@@ -22,13 +22,12 @@ dependencies {
 
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-//	implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72")
-//	implementation("org.jetbrains.kotlin:kotlin-noarg:1.3.72")
 
 	implementation("org.springframework.boot:spring-boot-starter-parent:2.3.2.RELEASE")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.3.2.RELEASE")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-validation:2.3.2.RELEASE")
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.liquibase:liquibase-core:4.0.0")
