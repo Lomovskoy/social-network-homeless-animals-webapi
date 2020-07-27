@@ -24,5 +24,7 @@ data class Advertisement (
         val date: LocalDateTime,
 
         @OneToOne
-        val user: User
+        val user: User,
+
+        val isImportant: Boolean = false
 )

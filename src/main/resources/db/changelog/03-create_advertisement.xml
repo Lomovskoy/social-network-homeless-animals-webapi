@@ -24,6 +24,9 @@
             <column name="user" type="UUID" remarks="Хозяин объявления">
                 <constraints nullable="false" foreignKeyName="user_to_aв_FK" references="user(id)"/>
             </column>
+            <column name="is_important" type="boolean" remarks="Важность объявления">
+                <constraints nullable="false" />
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>
