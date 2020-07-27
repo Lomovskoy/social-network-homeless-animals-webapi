@@ -4,37 +4,41 @@ import java.time.LocalDateTime
 import java.util.*
 import javax.persistence.Entity
 import javax.persistence.Id
+import javax.persistence.ManyToMany
 
 @Entity
 data class User(
 
         @Id
-        var id: UUID,
+        val id: UUID,
 
-        var name: String,
+        val name: String,
 
-        var surname: String? = null,
+        val surname: String? = null,
 
-        var patronymic: String? = null,
+        val patronymic: String? = null,
 
-        var phone: String? = null,
+        val phone: String? = null,
 
-        var email: String,
+        val email: String,
 
-        var address: String? = null,
+        val address: String? = null,
 
-        var sex: Char? = null,
+        val sex: Char? = null,
 
-        var dateOfBirth: LocalDateTime? = null,
+        val dateOfBirth: LocalDateTime? = null,
 
-        var dateRegistration: LocalDateTime? = null,
+        val dateRegistration: LocalDateTime? = null,
 
-        var image: String,
+        val image: String,
 
-        var workEmail: String? = null,
+        val workEmail: String? = null,
 
-        var password: String,
+        val password: String,
 
-        var salt: String
+        val salt: String,
 
-) { constructor() }
+        @ManyToMany
+        val favorites: Set<Advertisement>
+
+)

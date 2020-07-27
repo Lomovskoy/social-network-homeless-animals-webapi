@@ -10,7 +10,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="description" type="varchar(500)" remarks="Описание объявления">
-                <constraints nullable="true"/>
+                <constraints nullable="false"/>
             </column>
             <column name="address" type="varchar(250)" remarks="Адрес объявления">
                 <constraints nullable="true"/>
