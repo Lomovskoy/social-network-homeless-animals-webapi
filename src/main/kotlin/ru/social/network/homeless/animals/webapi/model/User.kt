@@ -1,10 +1,9 @@
 package ru.social.network.homeless.animals.webapi.model
 
+import ru.social.network.homeless.animals.webapi.enum.Role
 import java.time.LocalDateTime
 import java.util.*
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.ManyToMany
+import javax.persistence.*
 import javax.validation.constraints.Email
 import javax.validation.constraints.Max
 import javax.validation.constraints.Size
@@ -50,6 +49,11 @@ data class User(
         val salt: String,
 
         @ManyToMany
-        val favorites: Set<Advertisement>
+        val favorites: Set<Advertisement>,
+
+        @Enumerated(EnumType.STRING)
+        @ElementCollection(targetClass = Role::class, fetch = FetchType.EAGER)
+        @CollectionTable(name = "user_role", joinColumns = [JoinColumn(name = "user_id")])
+        val roles : Set<Role>
 
 )

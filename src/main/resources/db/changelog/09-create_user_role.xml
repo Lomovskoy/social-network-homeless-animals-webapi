@@ -1,0 +1,14 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="9" author="lomovskoy_ky">
+        <createTable tableName="user_role">
+            <column name="user_id" type="UUID" remarks="Идентификатор пользователя">
+                <constraints nullable="false" foreignKeyName="user_role_id_PK" references="user(id)"/>
+            </column>
+            <column name="role" type="varchar(5)" remarks="Роль пользователя">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

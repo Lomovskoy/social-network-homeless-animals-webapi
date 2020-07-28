@@ -9,5 +9,6 @@
     <include file="changelog/06-create_comment.xml" relativeToChangelogFile="true"/>
     <include file="changelog/07-create_favorites.xml" relativeToChangelogFile="true"/>
     <include file="changelog/08-create_private_message.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/09-create_user_role.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
