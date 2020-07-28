@@ -12,7 +12,7 @@ import javax.validation.constraints.Size
 data class User(
 
         @Id
-        val id: UUID,
+        val id: UUID = UUID.randomUUID(),
 
         @Size(max = 50, min = 3, message = "Имя пользователя должно быть от 3 до 50 символов")
         val name: String,
@@ -45,15 +45,14 @@ data class User(
         @Size(max = 50, min = 7, message = "Пароль пользователя должен быть от 7 до 50 символов")
         val password: String,
 
-        @Size(max = 10, min = 20, message = "Соль пользователя должна быть от 10 до 20 символов")
-        val salt: String,
-
         @ManyToMany
-        val favorites: Set<Advertisement>,
+        val favorites: Set<Advertisement> = setOf(),
 
         @Enumerated(EnumType.STRING)
         @ElementCollection(targetClass = Role::class, fetch = FetchType.EAGER)
         @CollectionTable(name = "user_role", joinColumns = [JoinColumn(name = "user_id")])
-        val roles : Set<Role>
+        val roles : Set<Role> = setOf(Role.USER),
+
+        val active: Boolean = true
 
 )

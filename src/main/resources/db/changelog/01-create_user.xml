@@ -39,8 +39,8 @@
             <column name="password" type="varchar(50)" remarks="Пароль пользователя">
                 <constraints nullable="false"/>
             </column>
-            <column name="salt" type="varchar(20)" remarks="Соль пользователя">
-                <constraints nullable="false"/>
+            <column name="active" type="boolean" remarks="Активен">
+                <constraints nullable="false" />
             </column>
         </createTable>
     </changeSet>
