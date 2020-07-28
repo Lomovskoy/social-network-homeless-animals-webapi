@@ -27,7 +27,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-validation:2.3.2.RELEASE")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+	implementation("org.springframework.boot:spring-boot-starter-security")
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.liquibase:liquibase-core:4.0.0")
