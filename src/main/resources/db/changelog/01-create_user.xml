@@ -2,7 +2,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
     <changeSet id="1" author="lomovskoy_ky">
-        <createTable tableName="user">
+        <createTable tableName="user_">
             <column name="id" type="UUID" remarks="Идентификатор пользователя">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="user_id_PK" unique="true"/>
             </column>
@@ -36,7 +36,7 @@
             <column name="work_email" type="varchar(50)" remarks="Рабочая электронная почта пользователя">
                 <constraints nullable="true" unique="true"/>
             </column>
-            <column name="password" type="varchar(50)" remarks="Пароль пользователя">
+            <column name="password" type="varchar(250)" remarks="Пароль пользователя">
                 <constraints nullable="false"/>
             </column>
             <column name="active" type="boolean" remarks="Активен">

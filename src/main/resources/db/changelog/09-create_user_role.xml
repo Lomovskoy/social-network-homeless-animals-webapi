@@ -4,7 +4,7 @@
     <changeSet id="9" author="lomovskoy_ky">
         <createTable tableName="user_role">
             <column name="user_id" type="UUID" remarks="Идентификатор пользователя">
-                <constraints nullable="false" foreignKeyName="user_role_id_PK" references="user(id)"/>
+                <constraints nullable="false" foreignKeyName="user_role_id_PK" references="user_(id)"/>
             </column>
             <column name="role" type="varchar(5)" remarks="Роль пользователя">
                 <constraints nullable="false"/>

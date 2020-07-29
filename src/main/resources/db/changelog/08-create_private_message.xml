@@ -13,10 +13,10 @@
                 <constraints nullable="false"/>
             </column>
             <column name="sender" type="UUID" remarks="Отправитель сообщения">
-                <constraints nullable="false" foreignKeyName="sender_message_id_PK" references="user(id)"/>
+                <constraints nullable="false" foreignKeyName="sender_message_id_PK" references="user_(id)"/>
             </column>
             <column name="recipient" type="UUID" remarks="Получатель сообщения">
-                <constraints nullable="false" foreignKeyName="recipient_message_id_PK" references="user(id)"/>
+                <constraints nullable="false" foreignKeyName="recipient_message_id_PK" references="user_(id)"/>
             </column>
         </createTable>
     </changeSet>

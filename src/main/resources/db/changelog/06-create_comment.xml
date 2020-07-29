@@ -7,7 +7,7 @@
                 <constraints nullable="false" primaryKey="true" primaryKeyName="comment_id_PK" unique="true"/>
             </column>
             <column name="user" type="UUID" remarks="Пользователь комментария">
-                <constraints nullable="false" foreignKeyName="user_to_comment_FK" references="user(id)"/>
+                <constraints nullable="false" foreignKeyName="user_to_comment_FK" references="user_(id)"/>
             </column>
             <column name="advertisement" type="UUID" remarks="Объявление комментария">
                 <constraints nullable="false" foreignKeyName="advertisement_to_comment_FK" references="advertisement(id)"/>

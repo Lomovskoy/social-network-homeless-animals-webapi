@@ -22,7 +22,7 @@
                 <constraints nullable="true"/>
             </column>
             <column name="user" type="UUID" remarks="Хозяин животного">
-                <constraints nullable="false" foreignKeyName="user_to_animal_FK" references="user(id)"/>
+                <constraints nullable="false" foreignKeyName="user_to_animal_FK" references="user_(id)"/>
             </column>
         </createTable>
     </changeSet>

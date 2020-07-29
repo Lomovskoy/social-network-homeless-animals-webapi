@@ -7,7 +7,7 @@
                 <constraints nullable="false" primaryKey="true" primaryKeyName="avatar_id_PK" unique="true"/>
             </column>
             <column name="user" type="UUID" remarks="Пользователь аватара">
-                <constraints nullable="false" foreignKeyName="user_to_avatar_FK" references="user(id)" unique="true"/>
+                <constraints nullable="false" foreignKeyName="user_to_avatar_FK" references="user_(id)" unique="true"/>
             </column>
             <column name="name" type="varchar(250)" remarks="Имя аватара">
                 <constraints nullable="true"/>
