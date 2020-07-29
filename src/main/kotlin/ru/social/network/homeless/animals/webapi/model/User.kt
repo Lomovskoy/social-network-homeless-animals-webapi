@@ -9,7 +9,7 @@ import javax.validation.constraints.Max
 import javax.validation.constraints.Size
 
 @Entity
-@Table(name = "user_", schema = "public")
+@Table(name = "user_")
 data class User(
 
         @Id
