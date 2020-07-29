@@ -13,10 +13,9 @@ class UserAuthenticationService(val userRepository: UserRepository) : UserDetail
 
     override fun loadUserByUsername(email: String): UserDetails {
         val user = userRepository.findByEmailAndActiveTrue(email)
-
         if (user.isEmpty) throw UsernameNotFoundException("User not found")
 
-        val authorities = listOf(SimpleGrantedAuthority("user"))
+        val authorities = user.get().role.map { role -> SimpleGrantedAuthority(role.name) }
         return User(user.get().name, user.get().password, authorities)
     }
 }
