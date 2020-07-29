@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import ru.social.network.homeless.animals.webapi.dto.CreateUserDTO
 import ru.social.network.homeless.animals.webapi.model.User
 import ru.social.network.homeless.animals.webapi.service.UserService
 
@@ -26,7 +27,7 @@ class AuthController(val userService: UserService) {
     }
 
     @PostMapping("/reg")
-    fun createUser(user: User, model: Model): String {
+    fun createUser(user: CreateUserDTO): String {
         userService.createUser(user)
         return "redirect:/login"
     }

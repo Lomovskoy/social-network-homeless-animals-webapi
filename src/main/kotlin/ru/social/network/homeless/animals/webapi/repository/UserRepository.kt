@@ -6,4 +6,6 @@ import ru.social.network.homeless.animals.webapi.model.User
 import java.util.*
 
 @Repository
-interface UserRepository : JpaRepository<User, UUID>
+interface UserRepository : JpaRepository<User, UUID> {
+    fun findByEmailAndActiveTrue(email: String): Optional<User>
+}

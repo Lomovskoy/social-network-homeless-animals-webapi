@@ -9,10 +9,12 @@ import javax.validation.constraints.Max
 import javax.validation.constraints.Size
 
 @Entity
+@Table(name = "user_", schema = "public")
 data class User(
 
         @Id
-        val id: UUID = UUID.randomUUID(),
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        val id: UUID? = null,
 
         @Size(max = 50, min = 3, message = "Имя пользователя должно быть от 3 до 50 символов")
         val name: String,
@@ -37,22 +39,22 @@ data class User(
 
         val dateOfBirth: LocalDateTime? = null,
 
-        val dateRegistration: LocalDateTime? = null,
+        val dateRegistration: LocalDateTime,
 
         @Email(message = "Некорректный email")
         val workEmail: String? = null,
 
-        @Size(max = 50, min = 7, message = "Пароль пользователя должен быть от 7 до 50 символов")
+        @Size(max = 250, min = 7, message = "Пароль пользователя должен быть от 7 до 50 символов")
         val password: String,
 
         @ManyToMany
-        val favorites: Set<Advertisement> = setOf(),
+        val favorites: Set<Advertisement>,
 
         @Enumerated(EnumType.STRING)
         @ElementCollection(targetClass = Role::class, fetch = FetchType.EAGER)
         @CollectionTable(name = "user_role", joinColumns = [JoinColumn(name = "user_id")])
-        val roles : Set<Role> = setOf(Role.USER),
+        val role : Set<Role>,
 
-        val active: Boolean = true
+        val active: Boolean
 
 )
