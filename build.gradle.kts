@@ -33,6 +33,9 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.liquibase:liquibase-core:4.0.0")
 	implementation("org.postgresql:postgresql:42.2.14")
+	implementation("com.google.guava:guava:23.0")
+
+	api("io.jsonwebtoken:jjwt:0.9.1")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
