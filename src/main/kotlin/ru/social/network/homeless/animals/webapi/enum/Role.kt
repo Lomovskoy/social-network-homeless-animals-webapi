@@ -13,6 +13,4 @@ enum class Role : GrantedAuthority {
             return name
         }
     }
-
-
 }
