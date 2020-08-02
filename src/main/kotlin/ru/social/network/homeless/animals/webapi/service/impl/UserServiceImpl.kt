@@ -15,8 +15,8 @@ import javax.validation.ValidationException
 @Service
 class UserServiceImpl(val userRepository: UserRepository, val clock: Clock, val passwordEncoder: PasswordEncoder) : UserService {
 
-    override fun getUser(userId: UUID): User {
-        return userRepository.findById(userId).orElseThrow()
+    override fun getUser(userId: UUID): Optional<User> {
+        return userRepository.findById(userId)
     }
 
     override fun getUsers(userIds: Set<UUID>): List<User> {

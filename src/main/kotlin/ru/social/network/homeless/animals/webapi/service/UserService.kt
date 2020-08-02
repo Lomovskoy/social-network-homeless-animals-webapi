@@ -6,7 +6,7 @@ import java.util.*
 
 interface UserService {
 
-    fun getUser(userId: UUID): User
+    fun getUser(userId: UUID): Optional<User>
 
     fun getUsers(userIds: Set<UUID>): List<User>
 

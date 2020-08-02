@@ -9,20 +9,19 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher
 import ru.social.network.homeless.animals.webapi.service.auth.UserAuthenticationService
 
 
 @Configuration
 @EnableWebSecurity
-class WebSecurityConfig(val authenticationService: UserAuthenticationService,
-                        val statelessAuthFilter: StatelessAuthFilter) : WebSecurityConfigurerAdapter() {
+class WebSecurityConfig : WebSecurityConfigurerAdapter() {
+
+    @Autowired
+    lateinit var authenticationService: UserAuthenticationService
 
 
     override fun configure(http: HttpSecurity) {
         http
-                .addFilterBefore(statelessAuthFilter, UsernamePasswordAuthenticationFilter::class.java)
                 .authorizeRequests()
                     .antMatchers("/", "/reg").permitAll()
                     .anyRequest().authenticated()
@@ -32,12 +31,13 @@ class WebSecurityConfig(val authenticationService: UserAuthenticationService,
                     .permitAll()
                 .and()
                     .logout()
-                    .logoutRequestMatcher(AntPathRequestMatcher("/logout"))
                     .permitAll()
     }
 
     override fun configure(auth: AuthenticationManagerBuilder) {
-        auth.userDetailsService(authenticationService)
+        auth
+                .userDetailsService(authenticationService)
+                .passwordEncoder(passwordEncoder())
     }
 
     @Bean
