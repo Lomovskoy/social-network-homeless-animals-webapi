@@ -1,14 +1,26 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" lang="en">
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title align="center">В хорошие руки</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<div th:insert="layouts/header.html" class="mt-2"> </div>
 
-<div th:include="layouts/header.html"></div>
+<!--<h2 align="center">Этот сайт позволяет отдать найденное или неудобное животное в хорошие руки</h2>-->
 
-<h2 align="center">Этот сайт позволяет отдать найденное или неудобное животное в хорошие руки</h2>
+<!--<h3 align="center">Это главная страница - сюда можно попасть без регистрации.</h3>-->
 
-<h3 align="center">Это главная страница - сюда можно попасть без регистрации.</h3>
+<!--<p align="center">Страница регистрации <a href="/reg">тут</a></p>-->
+<!--<p align="center">Страница входа <a href="/login">тут</a></p>-->
 
-<p align="center">Страница регистрации <a href="/reg">тут</a></p>
-<p align="center">Страница входа <a href="/login">тут</a></p>
+<!--<p align="center">Страница администратора <a href="/admin">тут</a></p>-->
 
-<p align="center">Страница администратора <a href="/admin">тут</a></p>
 
-<div th:include="layouts/footer.html"></div>
+<div th:replace="layouts/footer.html"></div>
+</body>
+</html>
