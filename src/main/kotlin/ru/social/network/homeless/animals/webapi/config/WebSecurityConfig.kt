@@ -37,9 +37,7 @@ class WebSecurityConfig(val authenticationService: UserAuthenticationService,
     }
 
     override fun configure(auth: AuthenticationManagerBuilder) {
-        auth
-                .userDetailsService(authenticationService)
-                .passwordEncoder(passwordEncoder())
+        auth.userDetailsService(authenticationService)
     }
 
     @Bean
